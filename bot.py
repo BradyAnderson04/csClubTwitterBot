@@ -44,7 +44,7 @@ for i in articleList:
     items = [x.text for x in article.ents]
     propNoun.append(Counter(items).most_common(5))
     print(Counter(items).most_common(3))
-print(modifiers, propNoun)
+
 
 modifiers = [
     'sexy',
@@ -88,7 +88,7 @@ class MyStreamListener(tweepy.StreamListener):
 
         # get a random halloween costume
         adjective = modifiers[random.randint(0, len(modifiers))]
-        halloweenObject = propNoun[random.randint(0,len(propNoun))]
+        halloweenObject = propNoun[random.randint(0,len(propNoun))][random.randint(0,len(propNoun))][0]
 
         # response
         response = 'You should be a', adjective, halloweenObject,'!'

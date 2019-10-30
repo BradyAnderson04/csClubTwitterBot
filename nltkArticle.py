@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 import html5lib
 import requests
 import re
+import random
 nlp = en_core_web_sm.load()
 
 def preprocess(sent):
@@ -81,3 +82,7 @@ for i in articleList:
     items = [x.text for x in article.ents]
     propNoun.append(Counter(items).most_common(5))
 print(propNoun)
+
+halloweenObject = propNoun[random.randint(0,len(propNoun))][random.randint(0,len(propNoun))][0]
+
+print('You should be a', halloweenObject)
